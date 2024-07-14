@@ -1,19 +1,3 @@
-# import json
-
-# with open('./schedule_files/NCAAF_Week22.json', 'r') as f:
-#     data = json.load(f)
-
-
-# events = data['events']
-
-# game_ids = [item['id'] for item in events]
-
-# print(game_ids)
-
-
-###############################################################################
-
-
 import json
 import requests
 import os
