@@ -7,7 +7,7 @@ import time
 def loopReadScheduleFiles():
     game_ids = []
     
-    folder_path = './schedule_files/'
+    folder_path = './data/schedule_files/'
 
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
@@ -33,7 +33,7 @@ def getGameDetailsFiles(start_index, end_index):
         response = requests.get('http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=' + dict[i])
         json_data = response.json()
 
-        with open('./game_data/' + dict[i] + '.json', 'w') as f:
+        with open('./data/game_data/' + dict[i] + '.json', 'w') as f:
             json.dump(json_data, f, indent=4)
     
         time.sleep(3)

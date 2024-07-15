@@ -4,8 +4,8 @@ import os
 
 
 def jsonScheduleToCsv():
-    source_folder = './schedule_files/'
-    destination_folder = './csv_schedule/'
+    source_folder = './data/schedule_files/'
+    destination_folder = './data/csv_schedule/'
 
     for filename in os.listdir(source_folder):
         file_path = os.path.join(source_folder, filename)
