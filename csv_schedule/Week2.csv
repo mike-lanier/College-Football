@@ -1,0 +1,89 @@
+game_id,matchup,abbr,attendance,conference_game,game_date,neutral_site,venue_id,venue_name,venue_city,venue_state,broadcast_type,network
+401525469,Murray State Racers at Louisville Cardinals,MUR @ LOU,45273,False,2023-09-07T23:30Z,False,3873,L&N Federal Credit Union Stadium,Louisville,KY,TV,ACCN
+401520193,Indiana State Sycamores at Indiana Hoosiers,INST @ IU,42775,False,2023-09-08T23:00Z,False,3830,"Memorial Stadium (Bloomington, IN)",Bloomington,IN,TV,BTN
+401520195,Illinois Fighting Illini at Kansas Jayhawks,ILL @ KU,45809,False,2023-09-08T23:30Z,False,3833,David Booth Kansas Memorial Stadium,Lawrence,KS,TV,ESPN2
+401520191,Ball State Cardinals at Georgia Bulldogs,BALL @ UGA,92746,False,2023-09-09T16:00Z,False,3917,Sanford Stadium,Athens,GA,TV,SECN
+401520202,UNLV Rebels at Michigan Wolverines,UNLV @ MICH,109482,False,2023-09-09T19:30Z,False,3558,Michigan Stadium,Ann Arbor,MI,TV,CBS
+401520183,Texas Longhorns at Alabama Crimson Tide,TEX @ ALA,100077,False,2023-09-09T23:00Z,False,3657,Bryant-Denny Stadium,Tuscaloosa,AL,TV,ESPN
+401525493,Southern Miss Golden Eagles at Florida State Seminoles,USM @ FSU,74467,False,2023-09-10T00:30Z,False,3697,Doak Campbell Stadium,Tallahassee,FL,TV,ACCN
+401520208,Youngstown State Penguins at Ohio State Buckeyes,YSU @ OSU,102897,False,2023-09-09T16:00Z,False,3861,Ohio Stadium,Columbus,OH,TV,BTN
+401524003,Stanford Cardinal at USC Trojans,STAN @ USC,67213,True,2023-09-10T02:30Z,False,477,Los Angeles Memorial Coliseum,Los Angeles,CA,TV,FOX
+401520209,Delaware Fightin' Blue Hens at Penn State Nittany Lions,DEL @ PSU,108575,False,2023-09-09T16:00Z,False,3632,Beaver Stadium,University Park,PA,Streaming,Peacock
+401524004,Tulsa Golden Hurricane at Washington Huskies,TLSA @ WASH,63128,False,2023-09-09T21:00Z,False,3765,Husky Stadium,Seattle,WA,TV,PAC12
+401520213,Austin Peay Governors at Tennessee Volunteers,APSU @ TENN,101915,False,2023-09-09T21:00Z,False,3853,Neyland Stadium,Knoxville,TN,Streaming,ESPN+
+401520213,Austin Peay Governors at Tennessee Volunteers,APSU @ TENN,101915,False,2023-09-09T21:00Z,False,3853,Neyland Stadium,Knoxville,TN,Streaming,SECN+
+401525436,Notre Dame Fighting Irish at NC State Wolfpack,ND @ NCSU,56919,False,2023-09-09T16:00Z,False,3670,Carter-Finley Stadium,Raleigh,NC,TV,ABC
+401523999,Utah Utes at Baylor Bears,UTAH @ BAY,43732,False,2023-09-09T16:00Z,False,4727,McLane Stadium,Waco,TX,TV,ESPN
+401524002,Oregon Ducks at Texas Tech Red Raiders,ORE @ TTU,56200,False,2023-09-09T23:00Z,False,3784,Jones AT&T Stadium,Lubbock,TX,TV,FOX
+401520199,Grambling Tigers at LSU Tigers,GRAM @ LSU,97735,False,2023-09-09T23:30Z,False,3958,Tiger Stadium (LA),Baton Rouge,LA,Streaming,ESPN+
+401520199,Grambling Tigers at LSU Tigers,GRAM @ LSU,97735,False,2023-09-09T23:30Z,False,3958,Tiger Stadium (LA),Baton Rouge,LA,Streaming,SECN+
+401525829,Troy Trojans at Kansas State Wildcats,TROY @ KSU,51940,False,2023-09-09T16:00Z,False,3636,Bill Snyder Family Stadium,Manhattan,KS,TV,FS1
+401524000,UC Davis Aggies at Oregon State Beavers,UCD @ ORST,35728,False,2023-09-10T01:00Z,False,3893,Reser Stadium,Corvallis,OR,TV,PAC12
+401525495,Appalachian State Mountaineers at North Carolina Tar Heels,APP @ UNC,50500,False,2023-09-09T21:15Z,False,3787,Kenan Stadium,Chapel Hill,NC,TV,ACCN
+401525830,SMU Mustangs at Oklahoma Sooners,SMU @ OU,84186,False,2023-09-09T22:00Z,False,3835,"Memorial Stadium (Norman, OK)",Norman,OK,Streaming,ESPN+
+401520217,Wisconsin Badgers at Washington State Cougars,WIS @ WSU,33024,False,2023-09-09T23:30Z,False,3820,Gesa Field,Pullman,WA,TV,ABC
+401520214,Ole Miss Rebels at Tulane Green Wave,MISS @ TULN,30000,False,2023-09-09T19:30Z,False,4729,Yulman Stadium,New Orleans,LA,TV,ESPN2
+401525492,Lafayette Leopards at Duke Blue Devils,LAF @ DUKE,17481,False,2023-09-09T22:00Z,False,3982,Wallace Wade Stadium,Durham,NC,Streaming,ESPN+
+401525492,Lafayette Leopards at Duke Blue Devils,LAF @ DUKE,17481,False,2023-09-09T22:00Z,False,3982,Wallace Wade Stadium,Durham,NC,Streaming,ACCNX
+401520188,Nebraska Cornhuskers at Colorado Buffaloes,NEB @ COLO,53241,False,2023-09-09T16:00Z,False,3726,Folsom Field,Boulder,CO,TV,FOX
+401520201,Texas A&M Aggies at Miami Hurricanes,TA&M @ MIA,48792,False,2023-09-09T19:30Z,False,3948,Hard Rock Stadium,Miami Gardens,FL,TV,ABC
+401525491,Charleston Southern Buccaneers at Clemson Tigers,CHSO @ CLEM,81500,False,2023-09-09T18:15Z,False,3836,"Memorial Stadium (Clemson, SC)",Clemson,SC,TV,ACCN
+401520216,Vanderbilt Commodores at Wake Forest Demon Deacons,VAN @ WAKE,28363,False,2023-09-09T15:00Z,False,3630,Allegacy Federal Credit Union Stadium,Winston-Salem,NC,TV,ESPNU
+401520216,Vanderbilt Commodores at Wake Forest Demon Deacons,VAN @ WAKE,28363,False,2023-09-09T15:00Z,False,3630,Allegacy Federal Credit Union Stadium,Winston-Salem,NC,Streaming,ACCNX
+401520185,Delaware State Hornets at Army Black Knights,DSU @ ARMY,25153,False,2023-09-09T16:00Z,False,3841,Michie Stadium,West Point,NY,TV,CBSSN
+401520215,Purdue Boilermakers at Virginia Tech Hokies,PUR @ VT,65632,False,2023-09-09T16:00Z,False,3799,Lane Stadium,Blacksburg,VA,Streaming,ESPN3
+401525490,Holy Cross Crusaders at Boston College Eagles,HC @ BC,40122,False,2023-09-09T16:00Z,False,3615,"Alumni Stadium (Chestnut Hill, MA)",Chestnut Hill,MA,Streaming,ESPN+
+401525498,James Madison Dukes at Virginia Cavaliers,JMU @ UVA,56508,False,2023-09-09T16:00Z,False,3923,Scott Stadium,Charlottesville,VA,TV,ESPNU
+401525494,South Carolina State Bulldogs at Georgia Tech Yellow Jackets,SCST @ GT,31452,False,2023-09-09T17:00Z,False,721,Bobby Dodd Stadium,Atlanta,GA,Streaming,ESPN+
+401525494,South Carolina State Bulldogs at Georgia Tech Yellow Jackets,SCST @ GT,31452,False,2023-09-09T17:00Z,False,721,Bobby Dodd Stadium,Atlanta,GA,Streaming,ACCNX
+401532396,New Hampshire Wildcats at Central Michigan Chippewas,UNH @ CMU,17302,False,2023-09-09T17:30Z,False,3786,Kelly/Shorts Stadium,Mount Pleasant,MI,Streaming,ESPN+
+401532400,Eastern Illinois Panthers at Bowling Green Falcons,EIU @ BGSU,12312,False,2023-09-09T18:00Z,False,3700,Doyt L. Perry Stadium,Bowling Green,OH,Streaming,ESPN+
+401520196,Eastern Kentucky Colonels at Kentucky Wildcats,EKU @ UK,61876,False,2023-09-09T19:00Z,False,3683,Kroger Field,Lexington,KY,Streaming,ESPN+
+401520196,Eastern Kentucky Colonels at Kentucky Wildcats,EKU @ UK,61876,False,2023-09-09T19:00Z,False,3683,Kroger Field,Lexington,KY,Streaming,SECN+
+401525828,Southern Utah Thunderbirds at BYU Cougars,SUU @ BYU,60834,False,2023-09-09T19:00Z,False,3801,LaVell Edwards Stadium,Provo,UT,Streaming,BIG12|ESPN+
+401520194,Iowa Hawkeyes at Iowa State Cyclones,IOWA @ ISU,61500,False,2023-09-09T19:30Z,False,3772,Jack Trice Stadium,Ames,IA,TV,FOX
+401520203,Richmond Spiders at Michigan State Spartans,RICH @ MSU,0,False,2023-09-09T19:30Z,False,3936,Spartan Stadium,East Lansing,MI,TV,BTN
+401520207,UTEP Miners at Northwestern Wildcats,UTEP @ NU,14851,False,2023-09-09T19:30Z,False,3911,Ryan Field,Evanston,IL,TV,BTN
+401525497,Western Michigan Broncos at Syracuse Orange,WMU @ SYR,32637,False,2023-09-09T19:30Z,False,1964,JMA Wireless Dome,Syracuse,NY,Streaming,ESPN+
+401525497,Western Michigan Broncos at Syracuse Orange,WMU @ SYR,32637,False,2023-09-09T19:30Z,False,1964,JMA Wireless Dome,Syracuse,NY,Streaming,ACCNX
+401526833,Miami (OH) RedHawks at Massachusetts Minutemen,M-OH @ MASS,9207,False,2023-09-09T19:30Z,False,3985,Warren McGuirk Alumni Stadium,Amherst,MA,Streaming,ESPN+
+401531395,Texas State Bobcats at UTSA Roadrunners,TXST @ UTSA,49342,False,2023-09-09T19:30Z,False,3604,Alamodome,San Antonio,TX,Streaming,ESPN+
+401531432,Wagner Seahawks at Navy Midshipmen,WAG @ NAVY,29789,False,2023-09-09T19:30Z,False,3852,Navy-Marine Corps Memorial Stadium,Annapolis,MD,TV,CBSSN
+401532397,Southern Illinois Salukis at Northern Illinois Huskies,SIU @ NIU,13114,False,2023-09-09T19:30Z,False,3764,Huskie Stadium,Dekalb,IL,Streaming,ESPN+
+401532398,Texas Southern Tigers at Toledo Rockets,TXSO @ TOL,22742,False,2023-09-09T19:30Z,False,3739,Glass Bowl,Toledo,OH,Streaming,ESPN+
+401520184,Kent State Golden Flashes at Arkansas Razorbacks,KENT @ ARK,73173,False,2023-09-09T20:00Z,False,3887,Razorback Stadium,Fayetteville,AR,TV,SECN
+401531411,Marshall Thundering Herd at East Carolina Pirates,MRSH @ ECU,38211,False,2023-09-09T20:00Z,False,3699,Dowdy-Ficklen Stadium,Greenville,NC,Streaming,ESPN3
+401531844,SE Louisiana Lions at South Alabama Jaguars,SELA @ USA,15237,False,2023-09-09T21:00Z,False,6526,Hancock Whitney Stadium,Mobile,AL,Streaming,ESPN+
+401520198,New Mexico State Aggies at Liberty Flames,NMSU @ LIB,20123,True,2023-09-09T22:00Z,False,3992,Williams Stadium (VA),Lynchburg,VA,Streaming,ESPN+
+401525833,Duquesne Dukes at West Virginia Mountaineers,DUQ @ WVU,50037,False,2023-09-09T22:00Z,False,3842,Milan Puskar Stadium,Morgantown,WV,Streaming,BIG12|ESPN+
+401531378,UAB Blazers at Georgia Southern Eagles,UAB @ GASO,20103,False,2023-09-09T22:00Z,False,3608,Allen E. Paulson Stadium,Statesboro,GA,Streaming,ESPN+
+401531419,Ohio Bobcats at Florida Atlantic Owls,OHIO @ FAU,17934,False,2023-09-09T22:00Z,False,3715,FAU Stadium,Boca Raton,FL,Streaming,ESPN+
+401531842,Louisiana Ragin' Cajuns at Old Dominion Monarchs,UL @ ODU,18154,True,2023-09-09T22:00Z,False,3918,S.B. Ballard Stadium,Norfolk,VA,Streaming,ESPN+
+401532399,Morgan State Bears at Akron Zips,MORG @ AKR,8213,False,2023-09-09T22:00Z,False,3768,InfoCision Stadium,Akron,OH,Streaming,ESPN+
+401532401,Fordham Rams at Buffalo Bulls,FOR @ BUFF,15854,False,2023-09-09T22:00Z,False,3965,UB Stadium,Buffalo,NY,Streaming,ESPN+
+401540581,Kennesaw State Owls at Chattanooga Mocs,KENN @ UTC,8123,False,2023-09-09T22:00Z,False,3720,Finley Stadium,Chattanooga,TN,Streaming,ESPN+
+401520189,North Texas Mean Green at Florida International Panthers,UNT @ FIU,15754,False,2023-09-09T22:30Z,False,218,Riccardo Silva Stadium,Miami,FL,Streaming,ESPN+
+401525496,Cincinnati Bearcats at Pittsburgh Panthers,CIN @ PITT,49398,False,2023-09-09T22:30Z,False,3752,Acrisure Stadium,Pittsburgh,PA,TV,CW NETWORK
+401520187,Jacksonville State Gamecocks at Coastal Carolina Chanticleers,JVST @ CCU,16006,False,2023-09-09T23:00Z,False,3654,Brooks Stadium (SC),Conway,SC,Streaming,ESPN+
+401520192,UConn Huskies at Georgia State Panthers,CONN @ GAST,15186,False,2023-09-09T23:00Z,False,4246,Center Parc Stadium,Atlanta,GA,Streaming,ESPN+
+401520197,Northwestern State Demons at Louisiana Tech Bulldogs,NWST @ LT,19152,False,2023-09-09T23:00Z,False,3776,Joe Aillet Stadium,Ruston,LA,Streaming,ESPN+
+401520206,Middle Tennessee Blue Raiders at Missouri Tigers,MTSU @ MIZ,57645,False,2023-09-09T23:00Z,False,3838,Memorial Stadium/Faurot Field,Columbia,MO,Streaming,ESPN+
+401520206,Middle Tennessee Blue Raiders at Missouri Tigers,MTSU @ MIZ,57645,False,2023-09-09T23:00Z,False,3838,Memorial Stadium/Faurot Field,Columbia,MO,Streaming,SECN+
+401520218,Houston Christian Huskies at Western Kentucky Hilltoppers,HCU @ WKU,20712,False,2023-09-09T23:00Z,False,3796,Houchens Industries-L.T. Smith Stadium,Bowling Green,KY,Streaming,ESPN+
+401525827,UCF Knights at Boise State Broncos,UCF @ BOIS,36447,False,2023-09-09T23:00Z,False,3653,Albertsons Stadium,Boise,ID,TV,FS1
+401525831,Houston Cougars at Rice Owls,HOU @ RICE,23425,False,2023-09-09T23:00Z,False,3895,Rice Stadium,Houston,TX,TV,NFL NET
+401531422,Florida A&M Rattlers at South Florida Bulls,FAMU @ USF,36495,False,2023-09-09T23:00Z,False,3886,Raymond James Stadium,Tampa,FL,Streaming,ESPN+
+401531427,Memphis Tigers at Arkansas State Red Wolves,MEM @ ARST,18724,False,2023-09-09T23:00Z,False,3625,Centennial Bank Stadium,Jonesboro,AR,Streaming,ESPN+
+401520190,McNeese Cowboys at Florida Gators,MCN @ FLA,88163,False,2023-09-09T23:30Z,False,3634,Ben Hill Griffin Stadium,Gainesville,FL,TV,ESPNU
+401520200,Charlotte 49ers at Maryland Terrapins,CLT @ MD,32804,False,2023-09-09T23:30Z,False,3665,SECU Stadium,College Park,MD,TV,NBC
+401520204,Eastern Michigan Eagles at Minnesota Golden Gophers,EMU @ MINN,48101,False,2023-09-09T23:30Z,False,3953,Huntington Bank Stadium,Minneapolis,MN,TV,BTN
+401520205,Arizona Wildcats at Mississippi State Bulldogs,ARIZ @ MSST,51648,False,2023-09-09T23:30Z,False,3693,Davis Wade Stadium,Starkville,MS,TV,SECN
+401520210,Temple Owls at Rutgers Scarlet Knights,TEM @ RUTG,45317,False,2023-09-09T23:30Z,False,6577,SHI Stadium,Piscataway,NJ,TV,BTN
+401520212,Furman Paladins at South Carolina Gamecocks,FUR @ SC,78281,False,2023-09-09T23:30Z,False,3994,Williams-Brice Stadium,Columbia,SC,Streaming,ESPN+
+401520212,Furman Paladins at South Carolina Gamecocks,FUR @ SC,78281,False,2023-09-09T23:30Z,False,3994,Williams-Brice Stadium,Columbia,SC,Streaming,SECN+
+401524001,UCLA Bruins at San Diego State Aztecs,UCLA @ SDSU,32017,False,2023-09-09T23:30Z,False,7311,Snapdragon Stadium,San Diego,CA,TV,CBS
+401520211,Air Force Falcons at Sam Houston Bearkats,AFA VS SHSU,25121,False,2023-09-10T00:00Z,True,3891,NRG Stadium,Houston,TX,TV,CBSSN
+401525832,Nicholls Colonels at TCU Horned Frogs,NICH @ TCU,45010,False,2023-09-10T00:00Z,False,3616,Amon G. Carter Stadium,Fort Worth,TX,Streaming,BIG12|ESPN+
+401531843,Lamar Cardinals at UL Monroe Warhawks,LAM @ ULM,13154,False,2023-09-10T00:00Z,False,3817,Malone Stadium,Monroe,LA,Streaming,ESPN+
+401520186,Auburn Tigers at California Golden Bears,AUB @ CAL,44141,False,2023-09-10T02:30Z,False,3831,California Memorial Stadium,Berkeley,CA,TV,ESPN
+401523998,Oklahoma State Cowboys at Arizona State Sun Devils,OKST @ ASU,42569,False,2023-09-10T02:30Z,False,3947,Mountain America Stadium,Tempe,AZ,TV,FS1

@@ -1,0 +1,88 @@
+game_id,matchup,abbr,attendance,conference_game,game_date,neutral_site,venue_id,venue_name,venue_city,venue_state,broadcast_type,network
+401551733,Georgia Southern Eagles at Ohio Bobcats,GASO VS OHIO,8059,False,2023-12-16T16:00Z,True,3654,Brooks Stadium (SC),Conway,SC,TV,ESPN
+401551733,Georgia Southern Eagles at Ohio Bobcats,GASO VS OHIO,8059,False,2023-12-16T16:00Z,True,3654,Brooks Stadium (SC),Conway,SC,Streaming,ESPN+
+401551733,Georgia Southern Eagles at Ohio Bobcats,GASO VS OHIO,8059,False,2023-12-16T16:00Z,True,3654,Brooks Stadium (SC),Conway,SC,Radio,ESPNRM
+401551751,Jacksonville State Gamecocks at Louisiana Ragin' Cajuns,JVST VS UL,14485,False,2023-12-16T19:15Z,True,3493,Caesars Superdome,New Orleans,LA,TV,ESPN
+401551751,Jacksonville State Gamecocks at Louisiana Ragin' Cajuns,JVST VS UL,14485,False,2023-12-16T19:15Z,True,3493,Caesars Superdome,New Orleans,LA,Streaming,ESPN+
+401551751,Jacksonville State Gamecocks at Louisiana Ragin' Cajuns,JVST VS UL,14485,False,2023-12-16T19:15Z,True,3493,Caesars Superdome,New Orleans,LA,Radio,ESPNRM
+401551731,Miami (OH) RedHawks at Appalachian State Mountaineers,M-OH VS APP,11121,False,2023-12-16T20:30Z,True,3652,FBC Mortgage Stadium,Orlando,FL,TV,ABC
+401551731,Miami (OH) RedHawks at Appalachian State Mountaineers,M-OH VS APP,11121,False,2023-12-16T20:30Z,True,3652,FBC Mortgage Stadium,Orlando,FL,Streaming,ESPN+
+401551732,New Mexico State Aggies at Fresno State Bulldogs,NMSU VS FRES,30822,False,2023-12-16T22:45Z,True,3971,University Stadium (NM),Albuquerque,NM,TV,ESPN
+401551732,New Mexico State Aggies at Fresno State Bulldogs,NMSU VS FRES,30822,False,2023-12-16T22:45Z,True,3971,University Stadium (NM),Albuquerque,NM,Streaming,ESPN+
+401551752,UCLA Bruins at Boise State Broncos,UCLA VS BOIS,32780,False,2023-12-17T00:30Z,True,7065,SoFi Stadium,Inglewood,CA,TV,ABC
+401551752,UCLA Bruins at Boise State Broncos,UCLA VS BOIS,32780,False,2023-12-17T00:30Z,True,7065,SoFi Stadium,Inglewood,CA,Streaming,ESPN+
+401551752,UCLA Bruins at Boise State Broncos,UCLA VS BOIS,32780,False,2023-12-17T00:30Z,True,7065,SoFi Stadium,Inglewood,CA,Radio,ESPNRM
+401551753,California Golden Bears at Texas Tech Red Raiders,CAL VS TTU,33071,False,2023-12-17T02:15Z,True,3766,Independence Stadium,Shreveport,LA,TV,ESPN
+401551753,California Golden Bears at Texas Tech Red Raiders,CAL VS TTU,33071,False,2023-12-17T02:15Z,True,3766,Independence Stadium,Shreveport,LA,Streaming,ESPN+
+401551469,Western Kentucky Hilltoppers at Old Dominion Monarchs,WKU VS ODU,5632,False,2023-12-18T19:30Z,True,4418,Jerry Richardson Stadium,Charlotte,NC,TV,ESPN2
+401551469,Western Kentucky Hilltoppers at Old Dominion Monarchs,WKU VS ODU,5632,False,2023-12-18T19:30Z,True,4418,Jerry Richardson Stadium,Charlotte,NC,Streaming,ESPN+
+401551735,UTSA Roadrunners at Marshall Thundering Herd,UTSA VS MRSH,11215,False,2023-12-20T02:00Z,True,1400,Toyota Stadium,Frisco,TX,TV,ESPN
+401551735,UTSA Roadrunners at Marshall Thundering Herd,UTSA VS MRSH,11215,False,2023-12-20T02:00Z,True,1400,Toyota Stadium,Frisco,TX,Streaming,ESPN+
+401551737,South Florida Bulls at Syracuse Orange,USF VS SYR,20711,False,2023-12-22T01:00Z,True,3715,FAU Stadium,Boca Raton,FL,TV,ESPN
+401551737,South Florida Bulls at Syracuse Orange,USF VS SYR,20711,False,2023-12-22T01:00Z,True,3715,FAU Stadium,Boca Raton,FL,Streaming,ESPN+
+401551737,South Florida Bulls at Syracuse Orange,USF VS SYR,20711,False,2023-12-22T01:00Z,True,3715,FAU Stadium,Boca Raton,FL,Radio,ESPNRM
+401551754,Georgia Tech Yellow Jackets at UCF Knights,GT VS UCF,30281,False,2023-12-22T23:30Z,True,3886,Raymond James Stadium,Tampa,FL,TV,ESPN
+401551754,Georgia Tech Yellow Jackets at UCF Knights,GT VS UCF,30281,False,2023-12-22T23:30Z,True,3886,Raymond James Stadium,Tampa,FL,Streaming,ESPN+
+401551739,Troy Trojans at Duke Blue Devils,TROY VS DUKE,20023,False,2023-12-23T17:00Z,True,7221,Protective Stadium,Birmingham,AL,TV,ABC
+401551739,Troy Trojans at Duke Blue Devils,TROY VS DUKE,20023,False,2023-12-23T17:00Z,True,7221,Protective Stadium,Birmingham,AL,Streaming,ESPN+
+401551741,Arkansas State Red Wolves at Northern Illinois Huskies,ARST VS NIU,11310,False,2023-12-23T17:00Z,True,3689,Cramton Bowl,Montgomery,AL,TV,ESPN
+401551741,Arkansas State Red Wolves at Northern Illinois Huskies,ARST VS NIU,11310,False,2023-12-23T17:00Z,True,3689,Cramton Bowl,Montgomery,AL,Streaming,ESPN+
+401551741,Arkansas State Red Wolves at Northern Illinois Huskies,ARST VS NIU,11310,False,2023-12-23T17:00Z,True,3689,Cramton Bowl,Montgomery,AL,Radio,ESPNRM
+401551742,James Madison Dukes at Air Force Falcons,JMU VS AFA,30828,False,2023-12-23T20:30Z,True,3616,Amon G. Carter Stadium,Fort Worth,TX,TV,ABC
+401551742,James Madison Dukes at Air Force Falcons,JMU VS AFA,30828,False,2023-12-23T20:30Z,True,3616,Amon G. Carter Stadium,Fort Worth,TX,Streaming,ESPN+
+401551743,Georgia State Panthers at Utah State Aggies,GAST VS USU,12168,False,2023-12-23T20:30Z,True,3653,Albertsons Stadium,Boise,ID,TV,ESPN
+401551743,Georgia State Panthers at Utah State Aggies,GAST VS USU,12168,False,2023-12-23T20:30Z,True,3653,Albertsons Stadium,Boise,ID,Streaming,ESPN+
+401551743,Georgia State Panthers at Utah State Aggies,GAST VS USU,12168,False,2023-12-23T20:30Z,True,3653,Albertsons Stadium,Boise,ID,Radio,ESPNRM
+401551755,Eastern Michigan Eagles at South Alabama Jaguars,EMU @ USA,20926,False,2023-12-24T00:00Z,False,6526,Hancock Whitney Stadium,Mobile,AL,TV,ESPN
+401551755,Eastern Michigan Eagles at South Alabama Jaguars,EMU @ USA,20926,False,2023-12-24T00:00Z,False,6526,Hancock Whitney Stadium,Mobile,AL,Streaming,ESPN+
+401551744,Utah Utes at Northwestern Wildcats,UTAH VS NU,20897,False,2023-12-24T00:30Z,True,6501,Allegiant Stadium,Las Vegas,NV,TV,ABC
+401551744,Utah Utes at Northwestern Wildcats,UTAH VS NU,20897,False,2023-12-24T00:30Z,True,6501,Allegiant Stadium,Las Vegas,NV,Streaming,ESPN+
+401551746,Coastal Carolina Chanticleers at San José State Spartans,CCU VS SJSU,7089,False,2023-12-24T03:30Z,True,7220,Clarence T.C. Ching Athletics Complex,Honolulu,HI,TV,ESPN
+401551746,Coastal Carolina Chanticleers at San José State Spartans,CCU VS SJSU,7089,False,2023-12-24T03:30Z,True,7220,Clarence T.C. Ching Athletics Complex,Honolulu,HI,Streaming,ESPN+
+401551746,Coastal Carolina Chanticleers at San José State Spartans,CCU VS SJSU,7089,False,2023-12-24T03:30Z,True,7220,Clarence T.C. Ching Athletics Complex,Honolulu,HI,Radio,ESPNRM
+401551756,Bowling Green Falcons at Minnesota Golden Gophers,BGSU VS MINN,28521,False,2023-12-26T19:00Z,True,3727,Ford Field,Detroit,MI,TV,ESPN
+401551756,Bowling Green Falcons at Minnesota Golden Gophers,BGSU VS MINN,28521,False,2023-12-26T19:00Z,True,3727,Ford Field,Detroit,MI,Streaming,ESPN+
+401551748,Texas State Bobcats at Rice Owls,TXST VS RICE,26542,False,2023-12-26T22:30Z,True,3735,Gerald J. Ford Stadium,Dallas,TX,TV,ESPN
+401551748,Texas State Bobcats at Rice Owls,TXST VS RICE,26542,False,2023-12-26T22:30Z,True,3735,Gerald J. Ford Stadium,Dallas,TX,Streaming,ESPN+
+401551757,Kansas Jayhawks at UNLV Rebels,KU VS UNLV,26478,False,2023-12-27T02:00Z,True,4251,Chase Field,Phoenix,AZ,TV,ESPN
+401551757,Kansas Jayhawks at UNLV Rebels,KU VS UNLV,26478,False,2023-12-27T02:00Z,True,4251,Chase Field,Phoenix,AZ,Streaming,ESPN+
+401551757,Kansas Jayhawks at UNLV Rebels,KU VS UNLV,26478,False,2023-12-27T02:00Z,True,4251,Chase Field,Phoenix,AZ,Radio,ESPNRM
+401581109,Louisville Cardinals at USC Trojans,LOU VS USC,35317,False,2023-12-28T01:00Z,True,4205,Petco Park,San Diego,CA,TV,FOX
+401551749,Texas A&M Aggies at Oklahoma State Cowboys,TA&M VS OKST,55212,False,2023-12-28T02:00Z,True,3891,NRG Stadium,Houston,TX,TV,ESPN
+401551749,Texas A&M Aggies at Oklahoma State Cowboys,TA&M VS OKST,55212,False,2023-12-28T02:00Z,True,3891,NRG Stadium,Houston,TX,Streaming,ESPN+
+401551749,Texas A&M Aggies at Oklahoma State Cowboys,TA&M VS OKST,55212,False,2023-12-28T02:00Z,True,3891,NRG Stadium,Houston,TX,Radio,ESPNRM
+401551758,Virginia Tech Hokies at Tulane Green Wave,VT VS TULN,35849,False,2023-12-27T19:00Z,True,3852,Navy-Marine Corps Memorial Stadium,Annapolis,MD,TV,ESPN
+401551758,Virginia Tech Hokies at Tulane Green Wave,VT VS TULN,35849,False,2023-12-27T19:00Z,True,3852,Navy-Marine Corps Memorial Stadium,Annapolis,MD,Streaming,ESPN+
+401551761,North Carolina Tar Heels at West Virginia Mountaineers,UNC VS WVU,42925,False,2023-12-27T22:30Z,True,3628,Bank of America Stadium,Charlotte,NC,TV,ESPN
+401551761,North Carolina Tar Heels at West Virginia Mountaineers,UNC VS WVU,42925,False,2023-12-27T22:30Z,True,3628,Bank of America Stadium,Charlotte,NC,Streaming,ESPN+
+401551761,North Carolina Tar Heels at West Virginia Mountaineers,UNC VS WVU,42925,False,2023-12-27T22:30Z,True,3628,Bank of America Stadium,Charlotte,NC,Radio,ESPNRM
+401551765,Arizona Wildcats at Oklahoma Sooners,ARIZ VS OU,55883,False,2023-12-29T02:15Z,True,3604,Alamodome,San Antonio,TX,TV,ESPN
+401551765,Arizona Wildcats at Oklahoma Sooners,ARIZ VS OU,55883,False,2023-12-29T02:15Z,True,3604,Alamodome,San Antonio,TX,Streaming,ESPN+
+401551765,Arizona Wildcats at Oklahoma Sooners,ARIZ VS OU,55883,False,2023-12-29T02:15Z,True,3604,Alamodome,San Antonio,TX,Radio,ESPNRM
+401551764,NC State Wolfpack at Kansas State Wildcats,NCSU VS KSU,31111,False,2023-12-28T22:45Z,True,4013,Camping World Stadium,Orlando,FL,TV,ESPN
+401551764,NC State Wolfpack at Kansas State Wildcats,NCSU VS KSU,31111,False,2023-12-28T22:45Z,True,4013,Camping World Stadium,Orlando,FL,Streaming,ESPN+
+401551764,NC State Wolfpack at Kansas State Wildcats,NCSU VS KSU,31111,False,2023-12-28T22:45Z,True,4013,Camping World Stadium,Orlando,FL,Radio,ESPNRM
+401551750,SMU Mustangs at Boston College Eagles,SMU VS BC,16238,False,2023-12-28T16:00Z,True,4245,Fenway Park,Boston,MA,TV,ESPN
+401551750,SMU Mustangs at Boston College Eagles,SMU VS BC,16238,False,2023-12-28T16:00Z,True,4245,Fenway Park,Boston,MA,Streaming,ESPN+
+401551762,Rutgers Scarlet Knights at Miami Hurricanes,RUTG VS MIA,35314,False,2023-12-28T19:15Z,True,4102,Yankee Stadium,Bronx,NY,TV,ESPN
+401551762,Rutgers Scarlet Knights at Miami Hurricanes,RUTG VS MIA,35314,False,2023-12-28T19:15Z,True,4102,Yankee Stadium,Bronx,NY,Streaming,ESPN+
+401551762,Rutgers Scarlet Knights at Miami Hurricanes,RUTG VS MIA,35314,False,2023-12-28T19:15Z,True,4102,Yankee Stadium,Bronx,NY,Radio,ESPNRM
+401551768,Missouri Tigers at Ohio State Buckeyes,MIZ VS OSU,70114,False,2023-12-30T01:00Z,True,3687,AT&T Stadium,Arlington,TX,TV,ESPN
+401551768,Missouri Tigers at Ohio State Buckeyes,MIZ VS OSU,70114,False,2023-12-30T01:00Z,True,3687,AT&T Stadium,Arlington,TX,Streaming,ESPN+
+401551768,Missouri Tigers at Ohio State Buckeyes,MIZ VS OSU,70114,False,2023-12-30T01:00Z,True,3687,AT&T Stadium,Arlington,TX,Radio,ESPNRM
+401551798,Oregon State Beavers at Notre Dame Fighting Irish,ORST VS ND,48223,False,2023-12-29T19:00Z,True,3946,Sun Bowl,El Paso,TX,TV,CBS
+401551766,Clemson Tigers at Kentucky Wildcats,CLEM VS UK,40132,False,2023-12-29T17:00Z,True,3712,EverBank Stadium,Jacksonville,FL,TV,ESPN
+401551766,Clemson Tigers at Kentucky Wildcats,CLEM VS UK,40132,False,2023-12-29T17:00Z,True,3712,EverBank Stadium,Jacksonville,FL,Streaming,ESPN+
+401551767,Iowa State Cyclones at Memphis Tigers,ISU VS MEM,48789,False,2023-12-29T20:30Z,True,3805,Simmons Bank Liberty Stadium,Memphis,TN,TV,ESPN
+401551767,Iowa State Cyclones at Memphis Tigers,ISU VS MEM,48789,False,2023-12-29T20:30Z,True,3805,Simmons Bank Liberty Stadium,Memphis,TN,Streaming,ESPN+
+401551767,Iowa State Cyclones at Memphis Tigers,ISU VS MEM,48789,False,2023-12-29T20:30Z,True,3805,Simmons Bank Liberty Stadium,Memphis,TN,Radio,ESPNRM
+401551773,Georgia Bulldogs at Florida State Seminoles,UGA VS FSU,63324,False,2023-12-30T21:00Z,True,3948,Hard Rock Stadium,Miami Gardens,FL,TV,ESPN
+401551773,Georgia Bulldogs at Florida State Seminoles,UGA VS FSU,63324,False,2023-12-30T21:00Z,True,3948,Hard Rock Stadium,Miami Gardens,FL,Streaming,ESPN+
+401551773,Georgia Bulldogs at Florida State Seminoles,UGA VS FSU,63324,False,2023-12-30T21:00Z,True,3948,Hard Rock Stadium,Miami Gardens,FL,Radio,ESPNRM
+401551769,Ole Miss Rebels at Penn State Nittany Lions,MISS VS PSU,71230,False,2023-12-30T17:00Z,True,5348,Mercedes-Benz Stadium,Atlanta,GA,TV,ESPN
+401551769,Ole Miss Rebels at Penn State Nittany Lions,MISS VS PSU,71230,False,2023-12-30T17:00Z,True,5348,Mercedes-Benz Stadium,Atlanta,GA,Streaming,ESPN+
+401551769,Ole Miss Rebels at Penn State Nittany Lions,MISS VS PSU,71230,False,2023-12-30T17:00Z,True,5348,Mercedes-Benz Stadium,Atlanta,GA,Radio,ESPNRM
+401551770,Auburn Tigers at Maryland Terrapins,AUB VS MD,50088,False,2023-12-30T19:00Z,True,3810,Nissan Stadium,Nashville,TN,TV,ABC
+401551770,Auburn Tigers at Maryland Terrapins,AUB VS MD,50088,False,2023-12-30T19:00Z,True,3810,Nissan Stadium,Nashville,TN,Streaming,ESPN+
+401554566,Toledo Rockets at Wyoming Cowboys,TOL VS WYO,30428,False,2023-12-30T21:30Z,True,3619,Arizona Stadium,Tucson,AZ,TV,CW NETWORK
+401554566,Toledo Rockets at Wyoming Cowboys,TOL VS WYO,30428,False,2023-12-30T21:30Z,True,3619,Arizona Stadium,Tucson,AZ,Streaming,Barstool
