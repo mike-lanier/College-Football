@@ -1,24 +1,7 @@
 import os
 import json
-import psycopg2
-from dotenv import load_dotenv
+import modules as mod
 
-
-def connectPostgres():
-    load_dotenv()
-
-    try:
-        conn = psycopg2.connect(
-            dbname=os.getenv('DB_NAME'),
-            user=os.getenv('DB_USER'),
-            password=os.getenv('DB_PASSWORD'),
-            host=os.getenv('DB_HOST'),
-            port=os.getenv('DB_PORT')
-        )
-        return conn
-    except psycopg2.Error as e:
-        print("Error connecting to PostgreSQL:", e)
-        return None
 
 
 def insertScheduleData(conn, schedules):
@@ -33,14 +16,14 @@ def insertScheduleData(conn, schedules):
             cur.execute(insert_statement, (event_json,))
         conn.commit()
         cur.close()
-    except psycopg2.Error as e:
+    except mod.psycopg2.Error as e:
         print("Error inserting events:", e)
 
 
 def main():
     source_folder = './data/schedule_files/'
 
-    conn = connectPostgres()
+    conn = mod.connectPostgres()
     if conn is None:
         return
 

@@ -1,7 +1,6 @@
 import os
 import json
-import psycopg2
-import loadSchedules as mod
+import modules as mod
 
 
 def insertGameData(conn, games):
@@ -17,7 +16,7 @@ def insertGameData(conn, games):
                 cur.execute(insert_statement, (play_json,))
         conn.commit()
         cur.close()
-    except psycopg2.Error as e:
+    except mod.psycopg2.Error as e:
         print("Error inserting events:", e)
 
 
