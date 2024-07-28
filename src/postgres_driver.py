@@ -21,6 +21,14 @@ class PostgresDatabaseDriver:
         return self.cur
     
 
+    def execute(self, query, params=None):
+        try:
+            self.cur.execute(query, params)
+        except psycopg2.Error as e:
+            print("Error executing query:", e)
+            self.conn.rollback()
+        
+
     def commit(self):
         return self.conn.commit()
 

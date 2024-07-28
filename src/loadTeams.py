@@ -1,31 +1,30 @@
 import os
 import json
-import psycopg2
 from postgres_driver import PostgresDatabaseDriver
 
 
-conn = PostgresDatabaseDriver()
+driver = PostgresDatabaseDriver()
 
 
-def insertTeamData(conn, teams):
+def insertTeamData(driver, teams):
     try:
-        cur = conn.cursor()
         insert_statement = """
             INSERT INTO teams (team_json)
             VALUES (%s)
         """
         for team in teams:
             team_json = json.dumps(team)
-            cur.execute(insert_statement, (team_json,))
-        conn.commit()
-    except psycopg2.Error as e:
+            driver.execute(insert_statement, (team_json,))
+        driver.commit()
+    except Exception as e:
         print("Error inserting events:", e)
+        driver.conn.rollback()
 
 
 def main():
     source_folder = './data/game_data/'
 
-    if conn is None:
+    if driver is None:
         return
 
     try:
@@ -37,12 +36,12 @@ def main():
                 teams = data['boxscore']['teams']
 
                 if teams:
-                    insertTeamData(conn, teams)
+                    insertTeamData(driver, teams)
                 else:
                     print(f"No teams found in {filename}")
 
     finally:
-        conn.close()
+        driver.close()
 
 
 if __name__ == '__main__':

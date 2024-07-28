@@ -1,14 +1,12 @@
 import os
 import json
-import psycopg2
 from postgres_driver import PostgresDatabaseDriver
 
 
-conn = PostgresDatabaseDriver()
+driver = PostgresDatabaseDriver()
 
 
-def insertScheduleData(conn, schedules):
-    cur = conn.cursor()
+def insertScheduleData(driver, schedules):
     try:
         insert_statement = """
             INSERT INTO schedule (sched_json)
@@ -16,16 +14,17 @@ def insertScheduleData(conn, schedules):
         """
         for event in schedules:
             event_json = json.dumps(event)
-            cur.execute(insert_statement, (event_json,))
-        conn.commit()
-    except psycopg2.Error as e:
+            driver.execute(insert_statement, (event_json,))
+        driver.commit()
+    except Exception as e:
         print("Error inserting events:", e)
+        driver.conn.rollback()
 
 
 def main():
     source_folder = './data/schedule_files/'
 
-    if conn is None:
+    if driver is None:
         return
 
     try:
@@ -37,12 +36,12 @@ def main():
                 events = data.get('events', [])
 
                 if events:
-                    insertScheduleData(conn, events)
+                    insertScheduleData(driver, events)
                 else:
                     print(f"No events found in {filename}")
 
     finally:
-        conn.close()
+        driver.close()
 
 
 if __name__ == "__main__":
