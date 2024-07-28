@@ -1,29 +1,30 @@
 import os
 import json
-import modules as mod
+import psycopg2
+from postgres_driver import PostgresDatabaseDriver
 
+
+conn = PostgresDatabaseDriver()
 
 
 def insertScheduleData(conn, schedules):
+    cur = conn.cursor()
     try:
-        cur = conn.cursor()
         insert_statement = """
-            INSERT INTO schedule (j)
+            INSERT INTO schedule (sched_json)
             VALUES (%s)
         """
         for event in schedules:
             event_json = json.dumps(event)
             cur.execute(insert_statement, (event_json,))
         conn.commit()
-        cur.close()
-    except mod.psycopg2.Error as e:
+    except psycopg2.Error as e:
         print("Error inserting events:", e)
 
 
 def main():
     source_folder = './data/schedule_files/'
 
-    conn = mod.connectPostgres()
     if conn is None:
         return
 

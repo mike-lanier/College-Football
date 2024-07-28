@@ -1,29 +1,31 @@
 import os
 import json
-import modules as mod
+import psycopg2
+from postgres_driver import PostgresDatabaseDriver
 
 
-def insertGameData(conn, games):
+conn = PostgresDatabaseDriver()
+
+
+def insertGameData(conn, games, filename):
     try:
         cur = conn.cursor()
         insert_statement = """
-            INSERT INTO plays (play_json)
-            VALUES (%s)
+            INSERT INTO plays (play_json, filename)
+            VALUES (%s, %s)
         """
         for drive in games:
             for play in drive['plays']:
                 play_json = json.dumps(play)
-                cur.execute(insert_statement, (play_json,))
+                cur.execute(insert_statement, (play_json, filename))
         conn.commit()
-        cur.close()
-    except mod.psycopg2.Error as e:
+    except psycopg2.Error as e:
         print("Error inserting events:", e)
 
 
 def main():
     source_folder = './data/game_data/'
 
-    conn = mod.connectPostgres()
     if conn is None:
         return
 
@@ -36,7 +38,7 @@ def main():
                 plays = data['drives']['previous']
 
                 if plays:
-                    insertGameData(conn, plays)
+                    insertGameData(conn, plays, filename)
                 else:
                     print(f"No plays found in {filename}")
 

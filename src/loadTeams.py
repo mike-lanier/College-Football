@@ -1,7 +1,10 @@
 import os
 import json
 import psycopg2
-import loadSchedules as mod
+from postgres_driver import PostgresDatabaseDriver
+
+
+conn = PostgresDatabaseDriver()
 
 
 def insertTeamData(conn, teams):
@@ -15,7 +18,6 @@ def insertTeamData(conn, teams):
             team_json = json.dumps(team)
             cur.execute(insert_statement, (team_json,))
         conn.commit()
-        cur.close()
     except psycopg2.Error as e:
         print("Error inserting events:", e)
 
@@ -23,7 +25,6 @@ def insertTeamData(conn, teams):
 def main():
     source_folder = './data/game_data/'
 
-    conn = mod.connectPostgres()
     if conn is None:
         return
 
@@ -42,7 +43,6 @@ def main():
 
     finally:
         conn.close()
-
 
 
 if __name__ == '__main__':
