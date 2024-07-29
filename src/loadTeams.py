@@ -9,7 +9,7 @@ driver = PostgresDatabaseDriver()
 def insertTeamData(driver, teams):
     try:
         insert_statement = """
-            INSERT INTO teams (team_json)
+            INSERT INTO teams_raw (team_json)
             VALUES (%s)
         """
         for team in teams:

@@ -9,7 +9,7 @@ driver = PostgresDatabaseDriver()
 def insertGameData(driver, games, filename):
     try:
         insert_statement = """
-            INSERT INTO plays (play_json, filename)
+            INSERT INTO plays_raw (play_json, filename)
             VALUES (%s, %s)
         """
         for drive in games:

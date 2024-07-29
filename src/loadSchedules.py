@@ -9,7 +9,7 @@ driver = PostgresDatabaseDriver()
 def insertScheduleData(driver, schedules):
     try:
         insert_statement = """
-            INSERT INTO schedule (sched_json)
+            INSERT INTO schedule_raw (sched_json)
             VALUES (%s)
         """
         for event in schedules:
