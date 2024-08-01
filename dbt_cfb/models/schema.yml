@@ -1,0 +1,29 @@
+
+version: 2
+
+models:
+  - name: schedule_clean
+    description: "Parsed/normalized json matchup info from schedule_raw"
+    columns:
+      - name: game_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: venues_clean
+    description: "Cleaned game venue info from schedule_raw"
+    columns:
+      - name: venue_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: broadcast_det_clean
+    description: "Cleaned game broadcast info from schedule_raw"
+    columns:
+      - name: game_id
+        description: "The primary key for this table"
+        data_tests:
+          - not_null
