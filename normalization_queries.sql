@@ -143,13 +143,14 @@ with tmp as (
     , play_json->'start'->>'down' as start_down
     , play_json->'start'->>'distance' as start_distance
     , play_json->'start'->>'yardLine' as start_yardline
+    , play_json->'start'->>'downDistanceText' as start_poss_detail
     , play_json->'type'->>'id' as playtype_id
     , play_json->>'text' as play_detail
+    , play_json->>'statYardage' as yards_gained
     , play_json->'end'->'team'->>'id' as end_poss_team_id
     , play_json->'end'->>'down' as end_down
     , play_json->'end'->>'distance' as end_distance
     , play_json->'end'->>'yardLine' as end_yardline
-    , play_json->'end'->>'shortDownDistanceText' as end_down_distance
     , play_json->'end'->>'downDistanceText' as end_poss_detail
     from
     plays_raw
@@ -157,23 +158,15 @@ with tmp as (
 
 
 select
-play_json->>'id' as play_id
-, play_json->>'sequenceNumber' as seq_num
-, play_json->>'scoringPlay' as scoring_play
-, play_json->'period'->>'number' as quarter_id
-, play_json->'clock'->>'displayValue' as start_clock
-, play_json->'start'->'team'->>'id' as poss_team_id
-, play_json->'start'->>'down' as start_down
+play_json->'start'->>'down' as start_down
 , play_json->'start'->>'distance' as start_distance
 , play_json->'start'->>'yardLine' as start_yardline
 , play_json->'type'->>'id' as playtype_id
-, play_json->>'text' as play_detail
+, play_json->>'statYardage' as yards_gained
 , play_json->'end'->'team'->>'id' as end_poss_team_id
 , play_json->'end'->>'down' as end_down
 , play_json->'end'->>'distance' as end_distance
 , play_json->'end'->>'yardLine' as end_yardline
-, play_json->'end'->>'shortDownDistanceText' as end_down_distance
-, play_json->'end'->>'downDistanceText' as end_poss_detail
 from
 plays_raw
 
@@ -198,6 +191,15 @@ with tmp as (
     , play_json->'type'->>'text' as playtype_detail
     from
     plays_raw
+
+    union
+
+    select
+    play_json->'pointAfterAttempt'->>'id' as playtype_id
+    , play_json->'pointAfterAttempt'->>'abbreviation' as playtype_abbrv
+    , play_json->'pointAfterAttempt'->>'text' as playtype_detail
+    from
+    plays_raw
 )
 
 select distinct
@@ -206,3 +208,9 @@ playtype_id::int
 , playtype_detail
 from
 tmp
+
+
+
+
+-- truncate table t_schedule, t_venue_d, t_broadcast_d, t_playtype_d, t_plays;
+drop table t_schedule, t_venue_d, t_broadcast_d, t_playtype_d, t_plays;
