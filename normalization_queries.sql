@@ -125,3 +125,84 @@ team_id::int
 , team_desc_short
 from
 tmp
+
+
+-------------------------------------------------------------------------------------------------
+                                    -- PLAYS TABLE
+-------------------------------------------------------------------------------------------------
+
+
+with tmp as (
+    select
+    play_json->>'id' as play_id
+    , play_json->>'sequenceNumber' as seq_num
+    , play_json->>'scoringPlay' as scoring_play
+    , play_json->'period'->>'number' as quarter_id
+    , play_json->'clock'->>'displayValue' as start_clock
+    , play_json->'start'->'team'->>'id' as poss_team_id
+    , play_json->'start'->>'down' as start_down
+    , play_json->'start'->>'distance' as start_distance
+    , play_json->'start'->>'yardLine' as start_yardline
+    , play_json->'type'->>'id' as playtype_id
+    , play_json->>'text' as play_detail
+    , play_json->'end'->'team'->>'id' as end_poss_team_id
+    , play_json->'end'->>'down' as end_down
+    , play_json->'end'->>'distance' as end_distance
+    , play_json->'end'->>'yardLine' as end_yardline
+    , play_json->'end'->>'shortDownDistanceText' as end_down_distance
+    , play_json->'end'->>'downDistanceText' as end_poss_detail
+    from
+    plays_raw
+)
+
+
+select
+play_json->>'id' as play_id
+, play_json->>'sequenceNumber' as seq_num
+, play_json->>'scoringPlay' as scoring_play
+, play_json->'period'->>'number' as quarter_id
+, play_json->'clock'->>'displayValue' as start_clock
+, play_json->'start'->'team'->>'id' as poss_team_id
+, play_json->'start'->>'down' as start_down
+, play_json->'start'->>'distance' as start_distance
+, play_json->'start'->>'yardLine' as start_yardline
+, play_json->'type'->>'id' as playtype_id
+, play_json->>'text' as play_detail
+, play_json->'end'->'team'->>'id' as end_poss_team_id
+, play_json->'end'->>'down' as end_down
+, play_json->'end'->>'distance' as end_distance
+, play_json->'end'->>'yardLine' as end_yardline
+, play_json->'end'->>'shortDownDistanceText' as end_down_distance
+, play_json->'end'->>'downDistanceText' as end_poss_detail
+from
+plays_raw
+
+
+select
+play_json
+from
+plays_raw
+limit 1;
+
+
+-------------------------------------------------------------------------------------------------
+                                    -- PLAYTYPE DETAIL TABLE
+-------------------------------------------------------------------------------------------------
+
+
+
+with tmp as (
+    select
+    play_json->'type'->>'id' as playtype_id
+    , play_json->'type'->>'abbreviation' as playtype_abbrv
+    , play_json->'type'->>'text' as playtype_detail
+    from
+    plays_raw
+)
+
+select distinct
+playtype_id::int
+, playtype_abbrv
+, playtype_detail
+from
+tmp
