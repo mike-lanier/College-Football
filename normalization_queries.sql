@@ -213,4 +213,4 @@ tmp
 
 
 -- truncate table t_schedule, t_venue_d, t_broadcast_d, t_playtype_d, t_plays;
-drop table t_schedule, t_venue_d, t_broadcast_d, t_playtype_d, t_plays;
+drop table t_schedule, t_venue_d, t_broadcast_d, t_playtype_d, t_plays, t_team_d;

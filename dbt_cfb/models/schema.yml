@@ -38,9 +38,18 @@ models:
           - not_null
 
   - name: t_plays
-    description: "Cleaned game broadcast info from plays_raw"
+    description: "Cleaned gameplay info from plays_raw"
     columns:
       - name: play_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: t_team_d
+    description: "Cleaned team details from teams_raw"
+    columns:
+      - name: team_id
         description: "The primary key for this table"
         data_tests:
           - unique
