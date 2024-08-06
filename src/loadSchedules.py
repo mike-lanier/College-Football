@@ -1,21 +1,22 @@
 import os
 import json
-from datetime import date
+from datetime import datetime
+import pytz
 from postgres_driver import PostgresDatabaseDriver
 
 
 driver = PostgresDatabaseDriver()
 
 
-def insertScheduleData(driver, schedules, filename, etl_date):
+def insertScheduleData(driver, schedules, filename, etl_ts):
     try:
         insert_statement = """
-            INSERT INTO schedule_raw (sched_json, filename, etl_date)
+            INSERT INTO schedule_raw (sched_json, filename, etl_ts)
             VALUES (%s, %s, %s)
         """
         for event in schedules:
             event_json = json.dumps(event)
-            driver.execute(insert_statement, (event_json, filename, etl_date))
+            driver.execute(insert_statement, (event_json, filename, etl_ts))
         driver.commit()
     except Exception as e:
         print("Error inserting events:", e)
@@ -29,7 +30,9 @@ def main():
         return
 
     try:
-        etl_date = date.today()
+        eastern_tz = pytz.timezone('US/Eastern')
+        ts = datetime.now(eastern_tz)
+        etl_ts = ts.isoformat()
         for filename in os.listdir(source_folder):
             file_path = os.path.join(source_folder, filename)
 
@@ -38,7 +41,7 @@ def main():
                 events = data.get('events', [])
 
                 if events:
-                    insertScheduleData(driver, events, filename, etl_date)
+                    insertScheduleData(driver, events, filename, etl_ts)
                 else:
                     print(f"No events found in {filename}")
 
