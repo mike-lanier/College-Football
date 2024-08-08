@@ -33,7 +33,7 @@ def getGameDetailsFiles(start_index, end_index):
         response = requests.get('http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=' + dict[i])
         json_data = response.json()
 
-        with open('./data/game_data/' + dict[i] + '.json', 'w') as f:
+        with open('./data/game_data/new_game_files/' + dict[i] + '.json', 'w') as f:
             json.dump(json_data, f, indent=4)
     
         time.sleep(3)

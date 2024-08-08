@@ -1,5 +1,6 @@
 import os
 import json
+import shutil
 from datetime import datetime
 import pytz
 from postgres_driver import PostgresDatabaseDriver
@@ -25,7 +26,8 @@ def insertGameData(driver, games, filename, etl_ts):
 
 
 def main():
-    source_folder = './data/game_data/'
+    source_folder = './data/game_data/new_game_files/'
+    processed_folder = './data/game_data/processed_game_files/'
 
     if driver is None:
         return
@@ -45,6 +47,9 @@ def main():
                     insertGameData(driver, plays, filename, etl_ts)
                 else:
                     print(f"No plays found in {filename}")
+
+            processed_file_path = os.path.join(processed_folder, filename)
+            shutil.move(file_path, processed_file_path)     
 
     finally:
         driver.close()
