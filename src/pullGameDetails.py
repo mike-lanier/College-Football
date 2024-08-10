@@ -36,7 +36,7 @@ def getGameDetailsFiles(start_index, end_index):
         with open('./data/game_data/new_game_files/' + dict[i] + '.json', 'w') as f:
             json.dump(json_data, f, indent=4)
     
-        time.sleep(3)
+        time.sleep(2)
 
     
 
@@ -46,7 +46,7 @@ def getGameDetailsFiles(start_index, end_index):
 if __name__ == '__main__':
     
     try:
-        output = getGameDetailsFiles(5, 10)
+        output = getGameDetailsFiles(10, 15)
         print("Completed successfully")
     except Exception as e:
         print(f"Failed: {e}")

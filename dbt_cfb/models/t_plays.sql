@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
+
 with tmp as (
     select
     play_json->>'id' as play_id
@@ -12,6 +19,7 @@ with tmp as (
     , play_json->'type'->>'id' as playtype_id
     , play_json->>'text' as play_detail
     , play_json->>'statYardage' as yards_gained
+    , etl_ts
     from
     plays_raw
 )
@@ -29,5 +37,12 @@ play_id::bigint
 , playtype_id::int
 , play_detail
 , yards_gained
+, current_timestamp::timestamp as elt_ts
 from
 tmp
+
+{% if is_incremental() %}
+
+where etl_ts >= (select max(elt_ts) from {{ this }})
+
+{% endif %}
