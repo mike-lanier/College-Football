@@ -31,7 +31,7 @@ play_id::bigint
 , scoring_play
 , quarter_id
 , start_clock
-, poss_team_id
+, poss_team_id::int
 , down
 , distance
 , yardLine

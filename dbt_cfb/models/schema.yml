@@ -10,6 +10,12 @@ models:
         data_tests:
           - unique
           - not_null
+      - name: venue_id
+        description: "Foreign key referencing t_venue_d venue_id"
+        data_tests:
+          - relationships:
+              to: ref('t_venue_d')
+              field: venue_id
 
   - name: t_venue_d
     description: "Cleaned game venue info from schedule_raw"
