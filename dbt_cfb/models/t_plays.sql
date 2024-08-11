@@ -19,6 +19,7 @@ with tmp as (
     , play_json->'type'->>'id' as playtype_id
     , play_json->>'text' as play_detail
     , play_json->>'statYardage' as yards_gained
+    , split_part(filename, '.json', 1) as game_id
     , etl_ts
     from
     plays_raw
@@ -37,6 +38,7 @@ play_id::bigint
 , playtype_id::int
 , play_detail
 , yards_gained
+, game_id::int
 , current_timestamp::timestamp as elt_ts
 from
 tmp
