@@ -1,6 +1,5 @@
 import requests
 import json
-import time
 from getWeek import week_start, week_end, week_id
 
 
@@ -9,5 +8,3 @@ data = response.json()
 
 with open('./data/schedule_files/' + week_id + '.json', 'w') as f:
     json.dump(data, f, indent=4)
-
-    
