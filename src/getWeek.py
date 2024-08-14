@@ -15,7 +15,7 @@ def createDataFrame():
     current_year = date.today().strftime("%Y")
     next_year = (date.today() + timedelta(days=365)).strftime("%Y")
     season = current_year + '-' + next_year
-    folder_path = './data/csv_season/'
+    folder_path = './data/season_calendar/'
 
     data = findSeasonFile(folder_path, season)
     df = pd.read_csv(data, index_col=None)
