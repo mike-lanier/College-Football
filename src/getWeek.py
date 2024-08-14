@@ -29,7 +29,7 @@ def calculateWeek():
     df['endDate'] = pd.to_datetime(df['endDate'])
     df['endDate'] = df['endDate'].dt.date
 
-    current_date = date.today() + timedelta(days=12)
+    current_date = date.today() # + timedelta(days=12)
 
     filtered_df = df[(df['startDate'] <= current_date) & (df['endDate'] >= current_date)]
     filtered_df = filtered_df.reset_index(drop=True)
@@ -38,14 +38,16 @@ def calculateWeek():
 
 def grabDateFilters():
     current_week = calculateWeek()
+    week_year = date.today().strftime("%Y")
+    season_week = week_year + '_' + current_week.loc[0, 'label']
     start = current_week.loc[0, 'weekStart']
     end = current_week.loc[0, 'weekEnd']
 
-    return start, end
+    return start, end, season_week
 
 
-week_start = grabDateFilters()[0]
-week_end = grabDateFilters()[1]
-
+week_start = str(grabDateFilters()[0])
+week_end = str(grabDateFilters()[1])
+week_id = grabDateFilters()[2]
 
 
