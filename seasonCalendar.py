@@ -19,7 +19,8 @@ df['endDate'] = pd.to_datetime(df['endDate'])
 df['endDate'] = df['endDate'] - timedelta(days=1)
 df['weekEnd'] = df['endDate'].dt.strftime('%Y%m%d')
 
-season_year = datetime.today().strftime('%Y')
+season_year = datetime.today().strftime("%Y") + '-' + (datetime.today() + timedelta(days=365)).strftime("%Y")
+folder_path = "./data/season_calendar/"
 
-df.to_csv(season_year + '.csv', index=False)
+df.to_csv(folder_path + season_year + '.csv', index=False)
 
