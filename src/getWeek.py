@@ -29,7 +29,7 @@ def calculateWeek():
     df['endDate'] = pd.to_datetime(df['endDate'])
     df['endDate'] = df['endDate'].dt.date
 
-    current_date = date.today() # + timedelta(days=12)
+    current_date = date.today() - timedelta(days=7) # To ensure game outcomes are included in schedule files
 
     filtered_df = df[(df['startDate'] <= current_date) & (df['endDate'] >= current_date)]
     filtered_df = filtered_df.reset_index(drop=True)
