@@ -10,7 +10,7 @@ sched_json->>'id' as game_id
 , jsonb_array_elements(sched_json->'competitions')->'venue'->>'id' as venue_id
 , jsonb_array_elements(sched_json->'competitions')->'attendance' as attendance
 from
-schedule_raw
+landing.raw_schedule
 ),
 
 conv as (

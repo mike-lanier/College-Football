@@ -11,7 +11,7 @@ driver = PostgresDatabaseDriver()
 def insertTeamData(driver, teams, filename, etl_ts):
     try:
         insert_statement = """
-            INSERT INTO teams_raw (team_json, filename, etl_ts)
+            INSERT INTO landing.raw_teams (team_json, filename, etl_ts)
             VALUES (%s, %s, %s)
         """
         for team in teams:
@@ -24,7 +24,7 @@ def insertTeamData(driver, teams, filename, etl_ts):
 
 
 def main():
-    source_folder = './data/game_data/'
+    source_folder = './data/game_data/processed_game_files/'
 
     if driver is None:
         return
