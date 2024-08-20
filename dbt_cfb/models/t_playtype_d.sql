@@ -4,7 +4,7 @@ with tmp as (
     , play_json->'type'->>'abbreviation' as playtype_abbrv
     , play_json->'type'->>'text' as playtype_detail
     from
-    plays_raw
+    landing.raw_plays
 
     union
 
@@ -13,7 +13,7 @@ with tmp as (
     , play_json->'pointAfterAttempt'->>'abbreviation' as playtype_abbrv
     , play_json->'pointAfterAttempt'->>'text' as playtype_detail
     from
-    plays_raw
+    landing.raw_plays
 )
 
 select distinct

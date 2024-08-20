@@ -22,7 +22,7 @@ with tmp as (
     , split_part(filename, '.json', 1) as game_id
     , etl_ts
     from
-    plays_raw
+    landing.raw_plays
 )
 
 select
