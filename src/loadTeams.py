@@ -24,7 +24,7 @@ def insertTeamData(driver, teams, filename, etl_ts):
 
 
 def main():
-    source_folder = './data/game_data/processed_game_files/'
+    source_folder = './data/game_data/new_game_files/'
 
     if driver is None:
         return

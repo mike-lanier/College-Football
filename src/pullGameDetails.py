@@ -46,7 +46,7 @@ def getGameDetailsFiles(start_index, end_index):
 if __name__ == '__main__':
     
     try:
-        output = getGameDetailsFiles(10, 15)
+        output = getGameDetailsFiles(15, 20)
         print("Completed successfully")
     except Exception as e:
         print(f"Failed: {e}")

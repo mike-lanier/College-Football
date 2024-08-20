@@ -27,6 +27,6 @@ tmp
 
 {% if is_incremental() %}
 
-where team_id not in (select team_id from {{ this }})
+where team_id::int not in (select team_id from {{ this }})
 
 {% endif %}
