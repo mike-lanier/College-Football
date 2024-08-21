@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
 with tmp as (
     select
     play_json->'type'->>'id' as playtype_id
@@ -22,5 +28,11 @@ playtype_id::int
 , playtype_detail
 from
 tmp
-where
+
+{% if is_incremental() %}
+
+where playtype_id::int not in (select playtype_id from {{ this }})
+and
 playtype_id is not null
+
+{% endif %}

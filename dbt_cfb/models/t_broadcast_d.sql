@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
 with tmp as (
 select
 sched_json->>'id' as game_id
@@ -15,3 +21,9 @@ game_id::int
 , broadcast_network
 from
 tmp
+
+{% if is_incremental() %}
+
+where game_id::int not in (select game_id from {{ this }})
+
+{% endif %}
