@@ -52,21 +52,6 @@ def gameFilesToS3(start_index, end_index):
         
 
 
-# def getGameDetailsFiles(start_index, end_index):
-#     dict = loopReadScheduleFiles()
-
-#     for i in range(start_index, end_index):
-#         response = requests.get('http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=' + dict[i])
-#         json_data = response.json()
-
-#         with open('./data/game_data/new_game_files/' + dict[i] + '.json', 'w') as f:
-#             json.dump(json_data, f, indent=4)
-    
-#         time.sleep(2)
-
-
-
-
 if __name__ == '__main__':
     
     try:
