@@ -2,6 +2,9 @@ import json
 import requests
 import os
 import time
+import boto3
+from dotenv import load_dotenv
+
 
 
 def loopReadScheduleFiles():
@@ -23,22 +26,43 @@ def loopReadScheduleFiles():
     gameid_dict = {index: value for index, value in enumerate(game_ids)}
 
     return gameid_dict
+
+
+def gameFilesToS3(start_index, end_index):
+    dict = loopReadScheduleFiles()
+    load_dotenv()
+
+    session = boto3.Session(
+        aws_access_key_id = os.getenv('aws_access_key'),
+        aws_secret_access_key = os.getenv('aws_secret_key'),
+        region_name = os.getenv('aws_region')
+    )
+    s3 = session.resource('s3')
+
+    for game_id in range(start_index, end_index):
+        response = requests.get('http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=' + dict[game_id])
+        json_data = response.json()
+        file_data = json.dumps(json_data)
+        bucket_name = os.getenv('cfb_s3_bucket')
+        object = s3.Object(bucket_name, dict[game_id] + '.json')
+
+        result = object.put(Body = file_data)
+
+        time.sleep(1)
         
 
 
-def getGameDetailsFiles(start_index, end_index):
-    dict = loopReadScheduleFiles()
+# def getGameDetailsFiles(start_index, end_index):
+#     dict = loopReadScheduleFiles()
 
-    for i in range(start_index, end_index):
-        response = requests.get('http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=' + dict[i])
-        json_data = response.json()
+#     for i in range(start_index, end_index):
+#         response = requests.get('http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=' + dict[i])
+#         json_data = response.json()
 
-        with open('./data/game_data/new_game_files/' + dict[i] + '.json', 'w') as f:
-            json.dump(json_data, f, indent=4)
+#         with open('./data/game_data/new_game_files/' + dict[i] + '.json', 'w') as f:
+#             json.dump(json_data, f, indent=4)
     
-        time.sleep(2)
-
-    
+#         time.sleep(2)
 
 
 
@@ -46,7 +70,7 @@ def getGameDetailsFiles(start_index, end_index):
 if __name__ == '__main__':
     
     try:
-        output = getGameDetailsFiles(15, 20)
+        output = gameFilesToS3(18, 20)
         print("Completed successfully")
     except Exception as e:
         print(f"Failed: {e}")
