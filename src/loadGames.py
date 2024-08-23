@@ -1,8 +1,9 @@
 import os
 import json
-import shutil
 from datetime import datetime
 import pytz
+import boto3
+from dotenv import load_dotenv
 from postgres_driver import PostgresDatabaseDriver
 
 
@@ -25,36 +26,45 @@ def insertGameData(driver, games, filename, etl_ts):
         driver.conn.rollback()
 
 
-def main():
-    source_folder = './data/game_data/new_game_files/'
-    processed_folder = './data/game_data/processed_game_files/'
-
+def S3FilesToPostgres():
     if driver is None:
         return
+    
+    load_dotenv()
+
+    s3 = boto3.client(
+        's3',
+        aws_access_key_id = os.getenv('aws_access_key'),
+        aws_secret_access_key = os.getenv('aws_secret_key'),
+        region_name = os.getenv('aws_region')
+    )
+
+    bucket_name = os.getenv('cfb_s3_bucket')
+    file_list = s3.list_objects_v2(Bucket = bucket_name)
 
     try:
-        eastern_tz = pytz.timezone('US/Eastern')
-        ts = datetime.now(eastern_tz)
-        etl_ts = ts.isoformat()
-        for filename in os.listdir(source_folder):
-            file_path = os.path.join(source_folder, filename)
+        if 'Contents' in file_list:
+            eastern_tz = pytz.timezone('US/Eastern')
+            ts = datetime.now(eastern_tz)
+            etl_ts = ts.isoformat()
 
-            with open(file_path, 'r') as f:
-                data = json.load(f)
+            for file in file_list['Contents']:
+                key = file['Key']
+                file_obj = s3.get_object(Bucket = bucket_name, Key = key)
+                json_string = file_obj['Body'].read().decode('utf-8')
+                data = json.loads(json_string)
                 plays = data['drives']['previous']
 
                 if plays:
-                    insertGameData(driver, plays, filename, etl_ts)
+                    insertGameData(driver, plays, key, etl_ts)
+                    s3.delete_object(Bucket = bucket_name, Key = key)
+                    print("Data transfer successful")
                 else:
-                    print(f"No plays found in {filename}")
-
-            processed_file_path = os.path.join(processed_folder, filename)
-            shutil.move(file_path, processed_file_path)     
-
+                    print(f"No plays found in {key}")
     finally:
         driver.close()
 
 
 
 if __name__ == '__main__':
-    main()
+    S3FilesToPostgres()
