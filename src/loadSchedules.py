@@ -1,14 +1,14 @@
-import os
 import json
 from datetime import datetime
 import pytz
 from postgres_driver import PostgresDatabaseDriver
+from awsConnect import connectS3, getBucketName, fileObjToString
 
 
 driver = PostgresDatabaseDriver()
 
 
-def insertScheduleData(driver, schedules, filename, etl_ts):
+def insert_schedule_data(driver, schedules, filename, etl_ts):
     try:
         insert_statement = """
             INSERT INTO landing.raw_schedule (sched_json, filename, etl_ts)
@@ -23,31 +23,40 @@ def insertScheduleData(driver, schedules, filename, etl_ts):
         driver.conn.rollback()
 
 
-def main():
-    source_folder = './data/schedule_files/'
-
-    if driver is None:
-        return
+def load_schedule_files_to_database():
+    s3 = connectS3()
+    bucket = getBucketName('cfb_s3_bucket')
+    folder = 'schedules/'
 
     try:
+        file_list = s3.list_objects_v2(Bucket=bucket, Prefix=folder)
         eastern_tz = pytz.timezone('US/Eastern')
-        ts = datetime.now(eastern_tz)
-        etl_ts = ts.isoformat()
-        for filename in os.listdir(source_folder):
-            file_path = os.path.join(source_folder, filename)
 
-            with open(file_path, 'r') as f:
-                data = json.load(f)
-                events = data.get('events', [])
+        if 'Contents' in file_list:
+            for file in file_list['Contents']:
+                key = file['Key']
+                if not key.endswith('/'):
+                    file_obj = s3.get_object(Bucket=bucket, Key=key)
+                    body = fileObjToString(file_obj)
 
-                if events:
-                    insertScheduleData(driver, events, filename, etl_ts)
-                else:
-                    print(f"No events found in {filename}")
+                    data = json.loads(body)
+                    events = data.get('events', [])
 
+                    if events:
+                        ts = datetime.now(eastern_tz)
+                        etl_ts = ts.isoformat()
+                        insert_schedule_data(driver, events, key, etl_ts)
+                        print(f"[{key}] uploaded to database")
+                    else:
+                        print(f"No events found in [{key}]")
+        else:
+            print("No contents found")
+            return
+    except Exception as e:
+        print("Error loading files to database:", e)
     finally:
         driver.close()
 
 
 if __name__ == "__main__":
-    main()
+    load_schedule_files_to_database()
