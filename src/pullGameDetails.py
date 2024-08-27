@@ -22,7 +22,7 @@ def upload_game_file(game_id, s3_conn, bucket_name):
         print(f"File upload failed: {e}")
 
 
-def list_schedule_files():
+def create_game_files():
     s3 = connectS3()
     bucket = getBucketName('cfb_s3_bucket')
     folder = 'schedules/'
@@ -50,4 +50,4 @@ def list_schedule_files():
 
 
 if __name__ == '__main__':
-    list_schedule_files()
+    create_game_files()
