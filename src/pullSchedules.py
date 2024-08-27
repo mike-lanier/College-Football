@@ -1,7 +1,6 @@
 import requests
 import json
-from uuid import uuid4
-from awsConnect import writeToBucket
+from awsConnect import connectS3, getBucketName
 from getWeek import week_start, week_end, week_id
 
 
@@ -10,13 +9,14 @@ def writeScheduleToS3Bucket():
     json_data = response.json()
     file_data = json.dumps(json_data)
 
-    file_id = str(uuid4())
-    file_name = week_id + '_' + file_id
+    bucket = getBucketName('cfb_s3_bucket')
 
-    bucket = 'cfb_s3_bucket'
     folder = 'schedules/'
+    file_name = folder + week_id + '.json'
+    
+    s3 = connectS3()
+    s3.put_object(Bucket=bucket, Key=file_name, Body=file_data, ContentType='application/json')
 
-    writeToBucket(file_data, file_name, bucket, folder)
 
 
 if __name__ == '__main__':

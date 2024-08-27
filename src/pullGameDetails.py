@@ -1,61 +1,48 @@
 import json
 import requests
-import os
-import time
-import boto3
-from dotenv import load_dotenv
+from awsConnect import connectS3, getBucketName, fileObjToString
 
 
-
-def loopReadScheduleFiles():
-    game_ids = []
+def uploadGameFile(game_id, s3_conn, bucket_name):
+    response = requests.get('http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=' + game_id)
     
-    folder_path = './data/schedule_files/'
-
-    for filename in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, filename)
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-        events = data['events']
-        event_ids = [item['id'] for item in events]
-        
-        for i in range(0, len(event_ids)):
-            game_ids.append(event_ids[i])
-
-    game_ids.sort()
-    gameid_dict = {index: value for index, value in enumerate(game_ids)}
-
-    return gameid_dict
-
-
-def gameFilesToS3(start_index, end_index):
-    dict = loopReadScheduleFiles()
-    load_dotenv()
-
-    session = boto3.Session(
-        aws_access_key_id = os.getenv('aws_access_key'),
-        aws_secret_access_key = os.getenv('aws_secret_key'),
-        region_name = os.getenv('aws_region')
-    )
-    s3 = session.resource('s3')
-
-    for game_id in range(start_index, end_index):
-        response = requests.get('http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=' + dict[game_id])
+    if response.status_code == 200:
         json_data = response.json()
         file_data = json.dumps(json_data)
-        bucket_name = os.getenv('cfb_s3_bucket')
-        object = s3.Object(bucket_name, dict[game_id] + '.json')
+        folder_name = 'games/'
+        file_name = folder_name + game_id + '.json'
+    else:
+        print(f"Failed Request: {Exception}")
 
-        result = object.put(Body = file_data)
+    try:
+        s3_conn.put_object(Bucket=bucket_name, Key=file_name, Body=file_data)
+    except Exception as e:
+        print(f"Failed: {e}")
 
-        time.sleep(1)
-        
+
+def listScheduleFiles():
+    s3 = connectS3()
+    bucket = getBucketName('cfb_s3_bucket')
+    folder = 'schedules/'
+    file_list = s3.list_objects_v2(Bucket=bucket, Prefix=folder)
+    
+    if 'Contents' in file_list:
+        for file in file_list['Contents']:
+            key = file['Key']
+            if not key.endswith('/'):
+                file_obj = s3.get_object(Bucket=bucket, Key=key)
+                body = fileObjToString(file_obj)
+                data = json.loads(body)
+                games = data['events']
+                
+                for game in games:
+                    game_id = game['id']
+                    uploadGameFile(game_id, s3, bucket)
+                    print("File upload successful")
+    else:
+        print("No files")
+
 
 
 if __name__ == '__main__':
-    
-    try:
-        output = gameFilesToS3(18, 20)
-        print("Completed successfully")
-    except Exception as e:
-        print(f"Failed: {e}")
+    listScheduleFiles()

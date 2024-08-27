@@ -14,14 +14,9 @@ def connectS3():
     )
     return s3
 
-def writeToBucket(file_data, file_name, bucket_env_var, folder_name=None):
-    s3 = connectS3()
-    bucket = os.getenv(bucket_env_var)
-    
-    if folder_name:
-        file_name = folder_name + file_name
-    else:
-        file_name
+def getBucketName(bucket_env_var):
+    load_dotenv()
+    return os.getenv(bucket_env_var)
 
-    s3.put_object(Bucket=bucket, Key=file_name, Body=file_data)
-
+def fileObjToString(file_obj):
+    return file_obj['Body'].read().decode('utf-8')
