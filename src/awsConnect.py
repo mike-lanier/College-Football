@@ -1,6 +1,7 @@
 import boto3
 from dotenv import load_dotenv
 import os
+import json
 
 
 def connectS3():
@@ -20,3 +21,9 @@ def getBucketName(bucket_env_var):
 
 def fileObjToString(file_obj):
     return file_obj['Body'].read().decode('utf-8')
+
+def getJsonFileBody(s3_conn, bucket, key):
+        file_obj = s3_conn.get_object(Bucket=bucket, Key=key)
+        body = fileObjToString(file_obj)
+        data = json.loads(body)
+        return data

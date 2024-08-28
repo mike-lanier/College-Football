@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 import pytz
 from postgres_driver import PostgresDatabaseDriver
-from awsConnect import connectS3, getBucketName, fileObjToString
+from awsConnect import connectS3, getBucketName, getJsonFileBody
 
 
 driver = PostgresDatabaseDriver()
@@ -36,10 +36,8 @@ def load_schedule_files_to_database():
             for file in file_list['Contents']:
                 key = file['Key']
                 if not key.endswith('/'):
-                    file_obj = s3.get_object(Bucket=bucket, Key=key)
-                    body = fileObjToString(file_obj)
+                    data = getJsonFileBody(s3, bucket, key)
 
-                    data = json.loads(body)
                     events = data.get('events', [])
 
                     if events:

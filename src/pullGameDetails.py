@@ -1,6 +1,6 @@
 import json
 import requests
-from awsConnect import connectS3, getBucketName, fileObjToString
+from awsConnect import connectS3, getBucketName, getJsonFileBody
 
 
 def upload_game_file(game_id, s3_conn, bucket_name):
@@ -34,10 +34,8 @@ def create_game_files():
             for file in file_list['Contents']:
                 key = file['Key']
                 if not key.endswith('/'):
-                    file_obj = s3.get_object(Bucket=bucket, Key=key)
-                    body = fileObjToString(file_obj)
+                    data = getJsonFileBody(s3, bucket, key)
 
-                    data = json.loads(body)
                     games = data['events']
                     
                     for game in games:
