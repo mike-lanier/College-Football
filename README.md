@@ -1,9 +1,9 @@
 # College Football
 
-### My personal project to collect and analyze game data from the full 2023-2024 college football season
+### ELT/ETL of game data from the college football season
 
-- The focus is to display a practical application of common data tools and processing methods
-- Development is done locally for now, using Python, PostgreSQL, dbt and eventually Airflow
+- The focus is to practically apply common data tools and processing methods
+- Development is done with Python, local PostgreSQL, local dbt and AWS
 
 
 ## Notes/Learnings
