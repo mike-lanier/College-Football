@@ -6,8 +6,8 @@
 - Development is done with Python, local PostgreSQL, local dbt and AWS
 
 
-## Process
-# Fetching, parsing and storing API response data in JSON format
+## Workflow
+### Fetching, parsing and storing API response data in JSON format
 
 - 
 
