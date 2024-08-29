@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
 with tmp as (
 select
 sched_json->>'id' as game_id
@@ -15,7 +21,7 @@ landing.raw_schedule
 
 conv as (
 select
-game_id
+game_id::int
 , game_date::timestamp as game_ts
 , matchup_full
 , matchup_abbrv
@@ -46,3 +52,9 @@ game_id
 , attendance
 from
 conv
+
+{% if is_incremental() %}
+
+where game_id not in (select game_id from {{ this }})
+
+{% endif %}
