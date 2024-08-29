@@ -6,6 +6,12 @@
 - Development is done with Python, local PostgreSQL, local dbt and AWS
 
 
+## Process
+# Fetching, parsing and storing API response data in JSON format
+
+- 
+
+
 ## Notes/Learnings
 
 - Loading the full content of json files to postgres instead of pre-processing would be more direct, but the pre-processing to raw tables for schedules and game/play data makes for simpler transformations with dbt, ultimately saving me time
