@@ -39,6 +39,21 @@ def insert_team_data(driver, teams, filename, etl_ts):
         driver.conn.rollback()
 
 
+def insert_scoring_play_data(driver, scores, filename, etl_ts):
+    try:
+        insert_statement = """
+            INSERT INTO landing.raw_scoring_plays (score_json, filename, etl_ts)
+            VALUES (%s, %s, %s)
+        """
+        for score in scores:
+            score_json = json.dumps(score)
+            driver.execute(insert_statement, (score_json, filename, etl_ts))
+        driver.commit()
+    except Exception as e:
+        print("Error inserting events:", e)
+        driver.conn.rollback()
+
+
 def load_game_details_to_database():
     s3 = connectS3()
     bucket = getBucketName('cfb_s3_bucket')
@@ -54,13 +69,15 @@ def load_game_details_to_database():
                 if not key.endswith('/'):
                     data = getJsonFileBody(s3, bucket, key)
 
+                    filename = key.split('/', 1)[1]
                     teams = data['boxscore']['teams']
                     plays = data['drives']['previous']
+                    scores = data['scoringPlays']
 
                     if teams:
                         ts = datetime.now(eastern_tz)
                         etl_ts = ts.isoformat()
-                        insert_team_data(driver, teams, key, etl_ts)
+                        insert_team_data(driver, teams, filename, etl_ts)
                         print(f"Teams in file [{key}] uploaded successfully")
                     else:
                         print(f"No teams found in [{key}]")
@@ -68,11 +85,19 @@ def load_game_details_to_database():
                     if plays:
                         ts = datetime.now(eastern_tz)
                         etl_ts = ts.isoformat()
-                        insert_game_data(driver, plays, key, etl_ts)
-                        # s3.delete_object(Bucket=bucket, Key=key)
+                        insert_game_data(driver, plays, filename, etl_ts)
                         print(f"Plays in file [{key}] uploaded successfully")
                     else:
                         print(f"No plays found in [{key}]")
+
+                    if scores:
+                        ts = datetime.now(eastern_tz)
+                        etl_ts = ts.isoformat()
+                        insert_scoring_play_data(driver, scores, filename, etl_ts)
+                        # s3.delete_object(Bucket=bucket, Key=key)
+                        print(f"Scoring plays in file [{key}] uploaded successfully")
+                    else:
+                        print(f"No scoring plays found in [{key}]")
         else:
             print("No contents found")
             return
