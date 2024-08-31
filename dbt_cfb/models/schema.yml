@@ -3,7 +3,7 @@ version: 2
 
 models:
   - name: t_schedule
-    description: "Parsed/normalized json matchup info from schedule_raw"
+    description: "Parsed/normalized json matchup info from raw_schedule"
     columns:
       - name: game_id
         description: "The primary key for this table"
@@ -18,7 +18,7 @@ models:
               field: venue_id
 
   - name: t_venue_d
-    description: "Cleaned game venue info from schedule_raw"
+    description: "Cleaned game venue info from raw_schedule"
     columns:
       - name: venue_id
         description: "The primary key for this table"
@@ -27,7 +27,7 @@ models:
           - not_null
 
   - name: t_broadcast_d
-    description: "Cleaned game broadcast info from schedule_raw"
+    description: "Cleaned game broadcast info from raw_schedule"
     columns:
       - name: game_id
         description: "The primary key for this table"
@@ -35,7 +35,7 @@ models:
           - not_null
 
   - name: t_playtype_d
-    description: "Cleaned game broadcast info from plays_raw"
+    description: "Cleaned game broadcast info from raw_plays"
     columns:
       - name: playtype_id
         description: "The primary key for this table"
@@ -44,7 +44,7 @@ models:
           - not_null
 
   - name: t_plays
-    description: "Cleaned gameplay info from plays_raw"
+    description: "Cleaned gameplay info from raw_plays"
     columns:
       - name: play_id
         description: "The primary key for this table"
@@ -53,10 +53,13 @@ models:
           - not_null
 
   - name: t_team_d
-    description: "Cleaned team details from teams_raw"
+    description: "Cleaned team details from raw_teams"
     columns:
       - name: team_id
         description: "The primary key for this table"
         data_tests:
           - unique
           - not_null
+
+  - name: t_summary_stats
+    description: "Summary stats from raw_teams"
