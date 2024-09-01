@@ -1,10 +1,15 @@
 import requests
 import json
 from awsConnect import connectS3, getBucketName
-from getWeek import week_start, week_end, week_id
+from get_week import CalculateWeek
 
 
 def create_schedule_file():
+    calc = CalculateWeek()
+    week_id = calc.get_week_id()
+    week_start = calc.get_week_start()
+    week_end = calc.get_week_end()
+
     try:
         response = requests.get('http://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=' + week_start + '-' + week_end)
         if response.status_code == 200:
