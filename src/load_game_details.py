@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 import pytz
-from awsConnect import connectS3, getBucketName, getJsonFileBody
+from aws_driver import AWSOps
 from postgres_driver import PostgresDatabaseDriver
 
 
@@ -55,8 +55,8 @@ def insert_scoring_play_data(driver, scores, filename, etl_ts):
 
 
 def load_game_details_to_database():
-    s3 = connectS3()
-    bucket = getBucketName('cfb_s3_bucket')
+    s3 = AWSOps.connectS3()
+    bucket = AWSOps.getBucketName('cfb_s3_bucket')
     folder = 'games/'
 
     try:
@@ -67,7 +67,7 @@ def load_game_details_to_database():
             for file in file_list['Contents']:
                 key = file['Key']
                 if not key.endswith('/'):
-                    data = getJsonFileBody(s3, bucket, key)
+                    data = AWSOps.getJsonFileBody(s3, bucket, key)
 
                     filename = key.split('/', 1)[1]
                     teams = data['boxscore']['teams']

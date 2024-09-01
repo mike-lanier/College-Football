@@ -1,6 +1,6 @@
 import requests
 import json
-from awsConnect import connectS3, getBucketName
+from aws_driver import AWSOps
 from get_week import CalculateWeek
 
 
@@ -19,11 +19,11 @@ def create_schedule_file():
             print("Request Failed")
             return
 
-        bucket = getBucketName('cfb_s3_bucket')
+        bucket = AWSOps.getBucketName('cfb_s3_bucket')
         folder = 'schedules/'
         file_name = folder + week_id + '.json'
         
-        s3 = connectS3()
+        s3 = AWSOps.connectS3()
         s3.put_object(Bucket=bucket, Key=file_name, Body=file_data, ContentType='application/json')
         print(f"[{file_name}] successfully created and uploaded")
 

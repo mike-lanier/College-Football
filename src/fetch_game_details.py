@@ -1,6 +1,6 @@
 import json
 import requests
-from awsConnect import connectS3, getBucketName, getJsonFileBody
+from aws_driver import AWSOps
 
 
 def upload_game_file(game_id, s3_conn, bucket_name):
@@ -23,8 +23,8 @@ def upload_game_file(game_id, s3_conn, bucket_name):
 
 
 def create_game_files():
-    s3 = connectS3()
-    bucket = getBucketName('cfb_s3_bucket')
+    s3 = AWSOps.connectS3()
+    bucket = AWSOps.getBucketName('cfb_s3_bucket')
     folder = 'schedules/'
     
     try:
@@ -34,7 +34,7 @@ def create_game_files():
             for file in file_list['Contents']:
                 key = file['Key']
                 if not key.endswith('/'):
-                    data = getJsonFileBody(s3, bucket, key)
+                    data = AWSOps.getJsonFileBody(s3, bucket, key)
 
                     games = data['events']
                     

@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 import pytz
 from postgres_driver import PostgresDatabaseDriver
-from awsConnect import connectS3, getBucketName, getJsonFileBody
+from aws_driver import AWSOps
 
 
 driver = PostgresDatabaseDriver()
@@ -24,8 +24,8 @@ def insert_schedule_data(driver, schedules, filename, etl_ts):
 
 
 def load_schedule_files_to_database():
-    s3 = connectS3()
-    bucket = getBucketName('cfb_s3_bucket')
+    s3 = AWSOps.connectS3()
+    bucket = AWSOps.getBucketName('cfb_s3_bucket')
     folder = 'schedules/'
 
     try:
@@ -36,7 +36,7 @@ def load_schedule_files_to_database():
             for file in file_list['Contents']:
                 key = file['Key']
                 if not key.endswith('/'):
-                    data = getJsonFileBody(s3, bucket, key)
+                    data = AWSOps.getJsonFileBody(s3, bucket, key)
 
                     events = data.get('events', [])
 
